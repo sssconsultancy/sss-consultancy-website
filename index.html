@@ -1,0 +1,1280 @@
+wweee
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSS Financial Consultancy Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 8%;
+      background: rgba(10, 35, 66, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+     .logo {
+         display: flex;
+         align-items: center;
+        }
+
+     .logo-img {
+         height: 60px;   /* adjust if needed */
+         width: auto;
+         margin-right: 10px;
+}
+
+     .logo-text {
+       font-size: 24px;
+  font-weight: 600;
+  color: #fff; /* White */
+  letter-spacing: 1px;
+}
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    header nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    header nav a:hover {
+      background: rgba(241, 196, 15, 0.1);
+      color: #F1C40F;
+      transform: translateY(-2px);
+    }
+
+    header nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #F1C40F;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    header nav a:hover::after {
+      width: 80%;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8rem 8% 5rem;
+      background: linear-gradient(135deg, #E5E8EC 0%, #FFFFFF 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(241, 196, 15, 0.05) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-text {
+      max-width: 55%;
+      z-index: 2;
+      animation: slideInLeft 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: #0A2342;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-text .highlight {
+      color: #F1C40F;
+      position: relative;
+    }
+
+    .hero-text .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, rgba(241, 196, 15, 0.3), rgba(241, 196, 15, 0.1));
+      z-index: -1;
+      animation: expandWidth 1.5s ease-out 0.5s forwards;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #F1C40F, #E67E22);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(241, 196, 15, 0.4);
+    }
+
+    .cta-button:active {
+      transform: translateY(-1px);
+    }
+
+    .hero-image {
+      max-width: 40%;
+      z-index: 2;
+      animation: slideInRight 1s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05) rotate(1deg);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* About Us Section */
+    .about-us {
+      padding: 6rem 0;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-us::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F1C40F' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .about-us .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .about-us h2 {
+      color: #0A2342;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .about-us h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #F1C40F, #E67E22);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text {
+      text-align: left;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      background: linear-gradient(135deg, #E5E8EC, #F8F9FA);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #F1C40F;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-item .icon {
+      font-size: 2rem;
+      color: #F1C40F;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item h4 {
+      color: #0A2342;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 6rem 0;
+      background: #E5E8EC;
+    }
+
+    .services h2 {
+      color: #0A2342;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .services h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #F1C40F, #E67E22);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: #FFFFFF;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(241, 196, 15, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(241, 196, 15, 0.05), transparent);
+      transition: left 0.5s;
+    }
+
+    .service-card:hover::before {
+      left: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: #F1C40F;
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #F1C40F, #E67E22);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .service-card h3 {
+      color: #0A2342;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card ul li {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .service-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #F1C40F;
+      font-weight: bold;
+    }
+
+    /* Team Section */
+    .team {
+      padding: 6rem 0;
+      background: #0A2342;
+      text-align: center;
+    }
+
+    .team h2 {
+      color: #FFFFFF;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .team h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #F1C40F, #E67E22);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .team-member {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(241, 196, 15, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #F1C40F;
+    }
+
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #F1C40F, #E67E22);
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .team-member h3 {
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member .role {
+      color: #F1C40F;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .team-member .description {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .team-member .note {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .extended-network {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(241, 196, 15, 0.2);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .extended-network h3 {
+      color: #F1C40F;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .extended-network p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 6rem 0;
+      background: #FFFFFF;
+    }
+
+    .contact h2 {
+      color: #0A2342;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .contact h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #F1C40F, #E67E22);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #F1C40F, #E67E22);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-item h4 {
+      color: #0A2342;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      background: #E5E8EC;
+      padding: 2.5rem;
+      border-radius: 16px;
+    }
+
+    .contact-form h3 {
+      color: #0A2342;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid rgba(10, 35, 66, 0.1);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #FFFFFF;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #F1C40F;
+      box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.1);
+    }
+
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    .popup h3 {
+      color: #0A2342;
+      margin-bottom: 1rem;
+    }
+
+    .popup p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #0A2342;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 3rem 8%;
+      border-top: 1px solid rgba(241, 196, 15, 0.2);
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-info .logo {
+      margin-bottom: 1rem;
+    }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes expandWidth {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(2deg);
+      }
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 5%;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header nav {
+        gap: 1rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 6rem 5% 4rem;
+      }
+
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 3rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-image {
+        max-width: 80%;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .about-us, .services, .team, .contact {
+        padding: 4rem 0;
+      }
+
+      .about-us h2, .services h2, .team h2, .contact h2 {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+
+    /* Scroll animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header>
+   
+  <div class="logo">
+    <img src="https://i.ibb.co/6cTdGb0c/Chat-GPT-Image-Aug-19-2025-09-57-02-AM.png" 
+         alt="SSS Financial Consultancy Services " 
+         class="logo-img" width="60">
+     <span class="logo-text">SSS Financial Consultancy Services</span>
+  </div>
+  <nav>
+    <a href="#home">Home</a>    
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+  
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>SSS Financial <span class="highlight">Consultancy</span> Services</h1>
+      <p>Smart strategic solutions for your finances. We help startups, professionals, and businesses achieve financial clarity with ease and confidence.</p>
+      <button class="cta-button" onclick="scrollToSection('contact')">
+        Get In Touch
+        <span style="font-size: 14px;">→</span>
+      </button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=400&fit=crop&auto=format" alt="Financial consultation and planning">
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+<section class="about-us scroll-reveal" id="about">
+  <div class="container">
+    <h2 class="section-title">About <span>SSS Financial Consultancy Services</span></h2>
+    <div class="about-wrapper">
+      
+      <!-- Left Text -->
+      <div class="about-text">
+        <p>
+          At <strong>SSS Financial Consultancy Services</strong>, we provide smart, customized financial and tax solutions 
+          for startups, individuals, professionals, and growing businesses. Based in Coimbatore, we blend deep expertise 
+          with practical execution to simplify finance, ensure compliance, and drive growth. 
+        </p>
+        
+        <p>
+          From <strong>GST & Income Tax filings</strong>, <strong>litigation support</strong>, <strong>ROC & RBI compliances</strong>, 
+          to <strong>Virtual CFO services</strong> — we deliver complete end-to-end financial guidance. Whether you’re launching 
+          a new business, managing regulatory risks, or planning for long-term financial health, we help you make 
+          informed decisions aligned with your goals.
+        </p>
+      </div>
+
+      <!-- Right Features -->
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="icon">🎯</div>
+          <div>
+            <h4>Expert Solutions</h4>
+            <p>Tailored strategies to suit your unique business needs.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">⚡</div>
+          <div>
+            <h4>Fast Execution</h4>
+            <p>Quick turnaround times without compromising quality.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">🛡️</div>
+          <div>
+            <h4>Full Compliance</h4>
+            <p>Stay ahead of regulations & avoid costly penalties.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon">🤝</div>
+          <div>
+            <h4>Trusted Partner</h4>
+            <p>Long-term relationships built on trust and results.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Services Section -->
+  <section class="services scroll-reveal" id="services">
+    <div class="container">
+      <h2>Our Comprehensive Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Taxation & Compliance</h3>
+          <ul>
+            <li>GST (Monthly, Quarterly, and Annual) Return Filings</li>
+            <li>Income Tax Return Filings (including NRI Taxation)</li>
+            <li>Tax Planning and Strategic Solutions</li>
+            <li>GST and Income Tax Litigations and Representations</li>
+            <li>TDS Compliance and Reconciliation</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Business Setup & Regulatory Support</h3>
+          <ul>
+            <li>Business Formation – Sole Proprietorship, Firm & LLP Incorporation</li>
+            <li>Company Incorporation, Trust Formation, Start-ups</li>
+            <li>ROC Compliances and Filings of ROC Forms</li>
+            <li>FEMA, FDI & RBI Compliance</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Audit & Reporting</h3>
+          <ul>
+            <li>Internal Audit</li>
+            <li>Process Audit</li>
+            <li>Stock Audit</li>
+            <li>Concurrent Audit (Bank)</li>
+            <li>MIS Report Preparation for Management</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Accounting & Financial Reporting</h3>
+          <ul>
+            <li>Bookkeeping</li>
+            <li>Accounts Finalisation</li>
+            <li>Preparation of Year-End Financial
+            <li>Preparation of Year-End Financial Statements</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>Advisory & Strategic Finance</h3>
+          <ul>
+            <li>Virtual CFO & Startup Advisory</li>
+            <li>Business Valuation & Due Diligence</li>
+            <li>CMA (Financial Projections) Report Preparation for Loan Procurement</li>
+            <li>Personal Finance and Wealth Management Advisory</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team scroll-reveal" id="team">
+    <div class="container">
+      <h2>Our Expert Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Seethalakshmi</h3>
+          <p class="role">Founder – SSS Financial Consultancy Services</p>
+          <p class="description">Seethalakshmi is the Founder of SSS Financial Consultancy Services and also serves as the Co-Founder and Finance Manager of Sri Narayana Oil Stores, a wholesale trading firm dealing in oils and eggs in Kamarajar Road, Singanallur, Coimbatore. She brings strong practical experience in business finance and day-to-day operations.</p>
+        </div>
+
+        <div class="team-member">
+          <div class="member-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Balachandran</h3>
+          <p class="role">Chartered Accountant | Consultant</p>
+          <p class="description">A qualified Chartered Accountant currently associated with Grant Thornton, one of the world's leading Professional services firm who brings his deep expertise in finance, tax, and business advisory. Through SSS, he supports startups and SMEs with tailored solutions in compliance, valuation, and virtual CFO services in a personal advisory capacity.</p>
+        </div>
+
+        <div class="team-member">
+          <div class="member-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Akash</h3>
+          <p class="role">Core Team Head | B.Com, CMA (Semi-qualified)</p>
+          <p class="description">The core team is headed by Akash, B Com, a semi-qualified Cost and Management Accountant with practical experience in taxation, compliance, and financial operations. He leads day-to-day execution and ensures timely, accurate support across all client engagements.</p>
+        </div>
+      </div>
+      
+      <div class="extended-network">
+        <h3>Our Extended Network</h3>
+        <p>SSS Financial Consultancy also works with a trusted network of professionals to provide comprehensive solutions for all your business needs.</p>
+        <p class="note">Note: All advisory services are provided in a personal, non-attestation capacity, fully compliant with ICAI ethical guidelines and employment policies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact scroll-reveal" id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <div>
+              <h4>Office Address</h4>
+              <p>8A, Nanjappanagar, 4th street east<br>Singanallur, Coimbatore - 641005</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h4>Phone Numbers</h4>
+              <p>+91 63794 61548<br>+91 94887 63200</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email Address</h4>
+              <p>sssconsults09@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="mail" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+    </div>
+    <div class="form-group">
+      <select name="service" required aria-label="Select Service">
+        <option value="">Select Service</option>
+        <option value="taxation">Taxation & Compliance</option>
+        <option value="business-setup">Business Setup & Regulatory Support</option>
+        <option value="audit">Audit & Reporting</option>
+        <option value="accounting">Accounting & Financial Reporting</option>
+        <option value="advisory">Advisory & Strategic Finance</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <textarea name="description" placeholder="Your Message" rows="4"></textarea>
+    </div>
+    <button type="submit" class="cta-button">Send Message</button>
+  </form>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h3>Message Sent Successfully 🎉</h3>
+      <p>Thank you for reaching out. We'll get back to you shortly!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+  <img src="https://i.ibb.co/6cTdGb0c/Chat-GPT-Image-Aug-19-2025-09-57-02-AM.png" alt="SSS Financial Consultancy Services Logo" 
+       style="height: 50px; width: auto;">
+  <span style="color: #fff; font-size: 1.2rem; font-weight: bold;">
+    SSS Financial Consultancy Services
+  </span>
+</div>
+          <p style="margin: 1rem 0; color: rgba(255, 255, 255, 0.8);">Your trusted partner for comprehensive financial solutions in Coimbatore.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;">
+            <a href="tel:+916379461548" style="color: #F1C40F; text-decoration: none;">📞 +91 63794 61548</a>
+            <a href="mailto:sssconsults09@gmail.com" style="color: #F1C40F; text-decoration: none;">✉️ Email Us</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(241, 196, 15, 0.2); margin-top: 2rem; padding-top: 2rem;">
+        <p style="opacity: 0.7; font-size: 0.9rem;">© 2025 SSS Financial Consultancy Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  
+  <script>
+    // Initialize EmailJS
+    (function(){
+      emailjs.init("n8Gq6t2DUAw6V0lzK"); // Replace with your EmailJS Public Key
+    })();
+
+    // Form submission handler
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_im0mtff", "template_0qiza0s", this)
+        .then(function() {
+          // Success - show popup
+          document.getElementById("popup").style.display = "flex";
+          // Clear form
+          e.target.reset();
+        }, function(error) {
+          // Error - show popup with error message
+          document.querySelector("#popup h3").textContent = "Oops!";
+          document.querySelector("#popup p").textContent = "Something went wrong. Please try again later.";
+          document.getElementById("popup").style.display = "flex";
+        });
+    });
+
+    // Close popup
+    document.querySelector(".close-btn").addEventListener("click", function() {
+      document.getElementById("popup").style.display = "none";
+    });
+
+    // Close popup when clicking outside
+    window.addEventListener("click", function(e) {
+      if (e.target === document.getElementById("popup")) {
+        document.getElementById("popup").style.display = "none";
+      }
+    });
+
+    // Smooth scrolling for navigation
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(10, 35, 66, 0.98)';
+        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.background = 'rgba(10, 35, 66, 0.95)';
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Add smooth hover effects for interactive elements
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add click effects to buttons
+      document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.style.position = 'absolute';
+          ripple.style.borderRadius = '50%';
+          ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+          ripple.style.transform = 'scale(0)';
+          ripple.style.animation = 'ripple 0.6s linear';
+          ripple.style.pointerEvents = 'none';
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+    });
+
+    // Ripple effect styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .cta-button {
+        position: relative;
+        overflow: hidden;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
